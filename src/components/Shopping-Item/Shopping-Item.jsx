@@ -1,3 +1,4 @@
+import styles from "./Shopping-Item.module.css";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
@@ -38,14 +39,22 @@ export default function ShoppingItem({ productItem }) {
   }, []);
 
   return (
-    <li>
-      <img src={productItem.image} alt="" />
-      <div>
-        <p>{productItem.title}</p>
-        <p>{productItem.price}</p>
-        <button onClick={handleQuantityPlus}></button>
-        <p>{quantity}</p>
-        <button onClick={handleQuantityMinus}></button>
+    <li className={styles.cardItem}>
+      <img src={productItem.image} alt="" className={styles.image} />
+      <div className={styles.cardContainer}>
+        <p className={styles.title}>{productItem.title}</p>
+        <div className={styles.buttonContainer}>
+          <div className={styles.buttons}>
+            <button onClick={handleQuantityMinus} className={styles.button}>
+              -
+            </button>
+            <p>{quantity}</p>
+            <button onClick={handleQuantityPlus} className={styles.button}>
+              +
+            </button>
+          </div>
+          <p>$ {productItem.price.toFixed(2)}</p>
+        </div>
       </div>
     </li>
   );

@@ -1,3 +1,4 @@
+import styles from "./Shopping-page.module.css";
 import { useEffect, useState } from "react";
 import ShoppingItem from "../components/Shopping-Item/Shopping-Item";
 import { useContext } from "react";
@@ -18,7 +19,7 @@ export default function ShoppingPage() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.shoppingPage}>
       {loading
         ? "loadding"
         : products.map((productItem) => (

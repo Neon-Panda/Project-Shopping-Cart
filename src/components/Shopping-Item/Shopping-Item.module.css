@@ -1,0 +1,48 @@
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  gap: 1rem;
+}
+
+.cardItem:hover {
+  outline: 1px solid hsla(0, 0%, 0%, 0.377);
+}
+
+.image {
+  height: 300px;
+  object-fit: contain;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.buttons {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  background-color: var(--background-main);
+  border: none;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.1rem;
+}

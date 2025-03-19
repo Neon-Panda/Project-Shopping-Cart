@@ -79,7 +79,7 @@ li {
 
 :root {
   --fancy-font-family: Quintessential;
-  --background-main: hsl(45, 33%, 95%);
-  --background-accent: hsl(0, 0%, 100%);
+  --background-main: hsl(0, 0%, 100%);
+  --background-accent: hsl(45, 33%, 95%);
   --text-color-main: hwb(0 15% 85%);
 }

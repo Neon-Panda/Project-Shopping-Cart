@@ -1,21 +1,21 @@
 import { Link, Outlet } from "react-router-dom";
-import "./HeaderNav.css";
+import styles from "./HeaderNav.module.css";
 
 export default function HeaderNav() {
   return (
-    <header className="header">
-      <nav className="nav">
-        <Link to="/" className="header-title">
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link to="/" className={styles.title}>
           Fake Store
         </Link>
-        <ul className="list">
+        <ul className={styles.list}>
           <li>
-            <Link to="/shopping" className="nav-link">
+            <Link to="/shopping" className={styles.link}>
               Shopping
             </Link>
           </li>
           <li>
-            <Link to="/checkout" className="nav-link">
+            <Link to="/checkout" className={styles.link}>
               Checkout
             </Link>
           </li>
