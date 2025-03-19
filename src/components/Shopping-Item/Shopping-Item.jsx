@@ -24,6 +24,12 @@ export default function ShoppingItem({ productItem }) {
         [productItem.id]: { quantity: quantity - 1, productItem: productItem },
       });
     }
+
+    // "empty" is a placeholder this syntax requires something there otherwise it gives an error
+    if (quantity - 1 === 0) {
+      const { [productItem.id]: empty, ...newobj } = itemsInCart;
+      setItemsInCart(newobj);
+    }
   }
 
   useEffect(() => {

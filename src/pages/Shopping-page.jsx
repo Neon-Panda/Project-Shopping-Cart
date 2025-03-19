@@ -9,10 +9,9 @@ export default function ShoppingPage() {
 
   useEffect(() => {
     async function makeCall() {
-      const data = await (
-        await fetch("https://fakestoreapi.com/products")
-      ).json();
-      setProducts(data);
+      const data = await fetch("https://fakestoreapi.com/products");
+      const jsonData = await data.json();
+      setProducts(jsonData);
       setLoading(false);
     }
     makeCall();
