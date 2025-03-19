@@ -1,10 +1,9 @@
-import styles from "./Shopping-Item.module.css";
+import styles from "./IncrementingButtons.module.css";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import DataContext from "../../Context/DataContext";
-import IncrementingButtons from "../IncrementingButtons/IncrementingButtons";
 
-export default function ShoppingItem({ productItem }) {
+export default function IncrementingButtons({ productItem }) {
   const [quantity, setQuantity] = useState(0);
   const { itemsInCart, setItemsInCart } = useContext(DataContext);
 
@@ -40,12 +39,17 @@ export default function ShoppingItem({ productItem }) {
   }, []);
 
   return (
-    <li className={styles.cardItem}>
-      <img src={productItem.image} alt="" className={styles.image} />
-      <div className={styles.cardContainer}>
-        <p className={styles.title}>{productItem.title}</p>
-        <IncrementingButtons productItem={productItem} />
+    <div className={styles.buttonContainer}>
+      <div className={styles.buttons}>
+        <button onClick={handleQuantityMinus} className={styles.button}>
+          -
+        </button>
+        <p>{quantity}</p>
+        <button onClick={handleQuantityPlus} className={styles.button}>
+          +
+        </button>
       </div>
-    </li>
+      <p>$ {productItem.price.toFixed(2)}</p>
+    </div>
   );
 }

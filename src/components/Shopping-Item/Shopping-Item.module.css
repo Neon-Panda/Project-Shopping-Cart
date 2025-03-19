@@ -24,25 +24,6 @@
   gap: 1rem;
 }
 
-.buttonContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.buttons {
-  grid-column: 2 / 3;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.button {
-  background-color: var(--background-main);
-  border: none;
-  border-radius: 8px;
-}
-
 .title {
   font-size: 1.1rem;
 }
