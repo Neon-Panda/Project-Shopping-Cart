@@ -1,8 +1,16 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
 
   @media (max-width: 800px) {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
+}
+
+.total {
+  grid-column: 1 / 3;
+  text-align: center;
 }

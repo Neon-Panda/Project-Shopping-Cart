@@ -1,0 +1,15 @@
+.image {
+  height: 100px;
+}
+
+.cardItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  place-items: center;
+  border: 1px solid black;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

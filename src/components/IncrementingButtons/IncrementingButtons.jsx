@@ -49,7 +49,11 @@ export default function IncrementingButtons({ productItem }) {
           +
         </button>
       </div>
-      <p>$ {productItem.price.toFixed(2)}</p>
+      {quantity === 0 ? (
+        <p>$ {productItem.price.toFixed(2)}</p>
+      ) : (
+        <p>$ {(productItem.price * quantity).toFixed(2)}</p>
+      )}
     </div>
   );
 }
