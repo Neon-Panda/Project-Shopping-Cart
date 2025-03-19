@@ -9,19 +9,26 @@ export default function ShoppingItem({ productItem }) {
   function handleQuantityPlus() {
     if (quantity < 5) {
       setQuantity(quantity + 1);
-      setItemsInCart({ ...itemsInCart, [productItem.id]: quantity + 1 });
+      setItemsInCart({
+        ...itemsInCart,
+        [productItem.id]: { quantity: quantity + 1, productItem: productItem },
+      });
     }
   }
 
   function handleQuantityMinus() {
     if (quantity > 0) {
       setQuantity(quantity - 1);
-      setItemsInCart({ ...itemsInCart, [productItem.id]: quantity - 1 });
+      setItemsInCart({
+        ...itemsInCart,
+        [productItem.id]: { quantity: quantity - 1, productItem: productItem },
+      });
     }
   }
 
   useEffect(() => {
-    if (itemsInCart[productItem.id]) setQuantity(itemsInCart[productItem.id]);
+    if (itemsInCart[productItem.id])
+      setQuantity(itemsInCart[productItem.id].quantity);
   }, []);
 
   return (

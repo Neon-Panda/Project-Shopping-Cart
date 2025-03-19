@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import DataContext from "../Context/DataContext";
+import ShoppingItem from "../components/Shopping-Item/Shopping-Item";
 
 export default function CheckoutPage() {
   const { itemsInCart, products } = useContext(DataContext);
@@ -7,13 +8,10 @@ export default function CheckoutPage() {
   return (
     <ul>
       {Object.keys(itemsInCart).map((itemID) => (
-        <li>
-          <p>{products[itemID].title}</p>
-          <p>Quantity: {itemsInCart[itemID]}</p>
-          <p>$ {products[itemID].price * itemsInCart[itemID]}</p>
-          <button>+ 1</button>
-          <button>- 1</button>
-        </li>
+        <ShoppingItem
+          productItem={itemsInCart[itemID].productItem}
+          key={itemID}
+        />
       ))}
     </ul>
   );

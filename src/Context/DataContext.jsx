@@ -4,7 +4,7 @@ const DataContext = createContext({});
 
 export function DataProvider({ children }) {
   const [products, setProducts] = useState(null);
-  const [itemsInCart, setItemsInCart] = useState([]);
+  const [itemsInCart, setItemsInCart] = useState({});
 
   return (
     <DataContext.Provider
