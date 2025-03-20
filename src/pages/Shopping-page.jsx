@@ -41,6 +41,7 @@ export default function ShoppingPage() {
           <input
             type="checkbox"
             name="men's clothing"
+            id="men's clothing"
             onChange={handleCategory}
           />
         </div>
@@ -49,16 +50,27 @@ export default function ShoppingPage() {
           <input
             type="checkbox"
             name="women's clothing"
+            id="women's clothing"
             onChange={handleCategory}
           />
         </div>
         <div className={styles.inputSection}>
           <label htmlFor="jewelery">Jewelery</label>
-          <input type="checkbox" name="jewelery" onChange={handleCategory} />
+          <input
+            type="checkbox"
+            name="jewelery"
+            id="jewelery"
+            onChange={handleCategory}
+          />
         </div>
         <div className={styles.inputSection}>
           <label htmlFor="electronics">Electronics</label>
-          <input type="checkbox" name="electronics" onChange={handleCategory} />
+          <input
+            type="checkbox"
+            name="electronics"
+            id="electronics"
+            onChange={handleCategory}
+          />
         </div>
       </aside>
       <ul className={styles.shoppingGrid}>
