@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.shopLink {
+  font-size: 2rem;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
