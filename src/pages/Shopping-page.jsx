@@ -36,7 +36,7 @@ export default function ShoppingPage() {
   return (
     <div className={styles.shoppingPage}>
       <aside className={styles.sideBar}>
-        <div>
+        <div className={styles.inputSection}>
           <label htmlFor="men's clothing">Men's Clothing</label>
           <input
             type="checkbox"
@@ -44,7 +44,7 @@ export default function ShoppingPage() {
             onChange={handleCategory}
           />
         </div>
-        <div>
+        <div className={styles.inputSection}>
           <label htmlFor="women's clothing">Women's Clothing</label>
           <input
             type="checkbox"
@@ -52,11 +52,11 @@ export default function ShoppingPage() {
             onChange={handleCategory}
           />
         </div>
-        <div>
+        <div className={styles.inputSection}>
           <label htmlFor="jewelery">Jewelery</label>
           <input type="checkbox" name="jewelery" onChange={handleCategory} />
         </div>
-        <div>
+        <div className={styles.inputSection}>
           <label htmlFor="electronics">Electronics</label>
           <input type="checkbox" name="electronics" onChange={handleCategory} />
         </div>

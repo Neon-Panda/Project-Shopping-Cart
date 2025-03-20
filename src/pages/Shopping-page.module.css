@@ -1,6 +1,22 @@
 .shoppingPage {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 150px 1fr;
+}
+
+.sideBar {
+  height: 100dvh;
+  padding: 1rem;
+  align-self: start;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 5px 10px -5px hsla(0, 0%, 0%, 0.671);
+}
+
+.inputSection {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .shoppingGrid {
