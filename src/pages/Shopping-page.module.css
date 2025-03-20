@@ -1,4 +1,9 @@
 .shoppingPage {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.shoppingGrid {
   background-color: var(--background-main);
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -7,6 +7,7 @@ import DataContext from "../Context/DataContext";
 export default function ShoppingPage() {
   const [loading, setLoading] = useState(true);
   const { products, setProducts } = useContext(DataContext);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function makeCall() {
@@ -18,13 +19,64 @@ export default function ShoppingPage() {
     makeCall();
   }, []);
 
+  function handleCategory(event) {
+    const selectedCategory = event.target.name;
+    switch (event.target.checked) {
+      case true:
+        setCategories([...categories, selectedCategory]);
+        break;
+      case false:
+        setCategories(categories.filter((item) => item !== selectedCategory));
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
     <div className={styles.shoppingPage}>
-      {loading
-        ? "loadding"
-        : products.map((productItem) => (
-            <ShoppingItem productItem={productItem} key={productItem.id} />
-          ))}
+      <aside className={styles.sideBar}>
+        <div>
+          <label htmlFor="men's clothing">Men's Clothing</label>
+          <input
+            type="checkbox"
+            name="men's clothing"
+            onChange={handleCategory}
+          />
+        </div>
+        <div>
+          <label htmlFor="women's clothing">Women's Clothing</label>
+          <input
+            type="checkbox"
+            name="women's clothing"
+            onChange={handleCategory}
+          />
+        </div>
+        <div>
+          <label htmlFor="jewelery">Jewelery</label>
+          <input type="checkbox" name="jewelery" onChange={handleCategory} />
+        </div>
+        <div>
+          <label htmlFor="electronics">Electronics</label>
+          <input type="checkbox" name="electronics" onChange={handleCategory} />
+        </div>
+      </aside>
+      <ul className={styles.shoppingGrid}>
+        {loading
+          ? "loadding"
+          : products.map((productItem) =>
+              categories.length === 0 ? (
+                <ShoppingItem productItem={productItem} key={productItem.id} />
+              ) : (
+                categories.includes(productItem.category) && (
+                  <ShoppingItem
+                    productItem={productItem}
+                    key={productItem.id}
+                  />
+                )
+              )
+            )}
+      </ul>
     </div>
   );
 }
